@@ -10,7 +10,7 @@
 	<header class="header">
 		<div class="header__content">
 			<button class="header__menu-btn"></button>
-			<svg class="header-logo">
+			<svg class="header-logo" viewBox="0 0 215 46">
 				<defs>
 					<linearGradient x1="0.100288184%" y1="49.9836667%" x2="99.9095101%" y2="49.9836667%" id="linearGradient-1">
 						<stop stop-color="#815333" offset="0%"></stop>
@@ -25,7 +25,25 @@
 						<stop stop-color="#F9E3BC" offset="100%"></stop>
 					</linearGradient>
 				</defs>
-				<use xlink:href="img/sprite.svg#logo"></use>
+				<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+					<polygon fill="#D7D6D6" fill-rule="nonzero" points="39.996 34.5 19.9691429 46 0 34.5 0 11.5 19.9691429 0 39.996 11.5"></polygon>
+					<polygon fill="url(#linearGradient-1)" fill-rule="nonzero" points="39.996 11.5 19.9691429 23 19.9691429 46 39.996 34.5"></polygon>
+					<polygon fill="url(#linearGradient-2)" fill-rule="nonzero" points="0 11.5 0 11.5 0 34.5 19.9691429 46 19.9691429 23"></polygon>
+					<polygon fill="url(#linearGradient-3)" fill-rule="nonzero" points="19.9691429 0 39.996 11.5 19.9691429 23 0 11.5"></polygon>
+					<polyline fill="#D4B195" fill-rule="nonzero" points="10.0422857 30.1875 19.9691429 36.11 29.9537143 30.1875 29.9537143 30.4175 19.9691429 36.34 10.0422857 30.4175 10.0422857 30.1875"></polyline>
+					<polyline fill="#D4B195" fill-rule="nonzero" points="14.544 19.78 12.6971429 19.78 12.6971429 20.01 14.544 20.01 14.544 19.78"></polyline>
+					<polyline fill="#D4B195" fill-rule="nonzero" points="27.2988571 19.78 25.3942857 19.78 25.3942857 20.01 27.2988571 19.9525 27.2988571 19.8375"></polyline>
+					<g id="Group" transform="translate(10.011429, 9.400000)" fill-rule="nonzero" fill="#010101">
+						<polygon points="9.95771429 2.56 8.57257143 4.17 8.57257143 24.6975 11.4005714 24.6975 11.4005714 4.17"></polygon>
+						<polygon points="13.132 6.5275 9.95771429 0.145 6.78342857 6.5275 9.95771429 6.5275 9.95771429 6.5275 9.95771429 6.5275"></polygon>
+						<polygon points="9.95771429 23.4325 2.68571429 19.12 2.68571429 10.38 4.53257143 10.38 0.0308571429 5.32 0.0308571429 20.7875 9.95771429 26.71"></polygon>
+						<polygon points="9.95771429 23.4325 17.2874286 19.12 17.2874286 10.38 15.3828571 10.38 19.9422857 5.32 19.9422857 20.7875 9.95771429 26.71"></polygon>
+					</g>
+					<text id="QUBE.Trade" font-family="SF UI Display, San Francisco" font-size="26.7696" font-weight="normal">
+						<tspan x="57" y="30" fill="#FFFFFF">QUBE.</tspan>
+						<tspan x="133.152192" y="30" fill="#D59967">TRADE</tspan>
+					</text>
+				</g>
 			</svg>
 			<div class="header__menu">
 				<div class="header-switch">
@@ -112,7 +130,7 @@
 	</div>
 	<div class="section">
 		<h2>Криптовалюты</h2>
-		<div class="container bage-container">
+		<div class="container bage-container carousel">
 			<div class="bage">
 				<svg>
 					<use xlink:href="img/sprite.svg#bitcoin-logo"></use>
@@ -165,7 +183,7 @@
 			</div>
 		</div>
 		<h2>Акции</h2>
-		<div class="container bage-container">
+		<div class="container bage-container carousel">
 			<div class="bage">
 				<svg>
 					<use xlink:href="img/sprite.svg#apple-logo"></use>
@@ -208,7 +226,7 @@
 			</div>
 		</div>
 		<h2>Фиатные валюты</h2>
-		<div class="container bage-container">
+		<div class="container bage-container carousel">
 			<div class="bage">rub</div>
 			<div class="bage">eur</div>
 			<div class="bage">usd</div>
@@ -229,7 +247,7 @@
 	</div>
 	<div class="section">
 		<h2>Наши партнеры</h2>
-		<div class="container bage-container">
+		<div class="container bage-container carousel">
 			<div class="bage">
 				<svg>
 					<use xlink:href="img/sprite.svg#poloniex-logo"></use>
@@ -540,7 +558,8 @@
 		</div>
 	</footer>
 <!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
-<!--	<script src="js/jquery-3.2.0.min.js"></script>-->
+	<script src="js/jquery-3.2.0.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
 	<script src="js/main.min.js"></script>
 </body>
 </html>

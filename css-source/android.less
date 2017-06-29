@@ -1,0 +1,43 @@
+.bg (@path, @name, @ext) {
+  background-image: url("@{path}@{name}.@{ext}");
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+        background-image: url("@{path}@{name}-large.@{ext}");
+    }
+}
+
+.android {
+	.best-bage {
+		background-image: url(../img/best-google-play.svg);
+	}
+	.store-bage {
+		background-image: url(../img/google-play-bage.svg);
+	}
+	.section-hero__img {
+		.bg("../img/", "phone-1-android", "jpg");
+	}
+	.three-phones {
+		.bg("../img/", "phone-2-android", "jpg");
+	}
+	.account-state-screenshot {
+		.bg("../img/", "phone-3-android", "jpg");
+	}
+	.three-phones-at-an-angle {
+		.bg("../img/", "mp-1-bg-android", "jpg");
+	}
+	.screenshot-of-the-current-price {
+		.bg("../img/", "mp-2-bg-android", "jpg");
+	}
+	
+	.horizontal-phone {
+		background-image: url(../img/mp-3-bg-android.jpg);
+//		@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+//			background-image: url(../img/mp-3-bg-android-large.jpg);
+//		}
+	}
+	.phone-in-hand {
+		.bg("../img/", "phone-4-android", "jpg");
+	}
+	.phone-in-hand-container {
+		background-color: #0E0E0E;
+	}
+}
