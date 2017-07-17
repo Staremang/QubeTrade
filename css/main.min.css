@@ -1627,8 +1627,18 @@ h2 {
   color: white;
   text-align: center;
   padding: 40px 0 140px;
+  position: relative;
+  z-index: 0;
 }
 .section_gray {
+  background: #121212;
+}
+@media (min-width: 768px) {
+  .section_gray {
+    background: black;
+  }
+}
+.section_last {
   background: #121212;
 }
 .section__signature {
@@ -1699,6 +1709,20 @@ h2 {
   max-width: 100%;
   opacity: 0;
 }
+.section-hero__freeze {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background-image: url("../video/ios/1-end.jpg");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .section-hero__freeze {
+    background-image: url("../video/ios/1-end-large.jpg");
+  }
+}
 .section-hero__overlay {
   position: absolute;
   left: 0;
@@ -1726,6 +1750,12 @@ h2 {
   .section-hero__video-container {
     display: none;
   }
+}
+.section-hero__video-container.ended .section-hero__video {
+  display: none;
+}
+.section-hero__video-container.ended .section-hero__freeze {
+  display: block;
 }
 .advantages {
   display: -webkit-box;
@@ -2674,6 +2704,10 @@ h2 {
 #ac-globalfooter .ac-gf-buystrip {
   text-align: center;
 }
+video {
+  max-width: 100%;
+  max-height: 100%;
+}
 .three-phones {
   width: 1024px;
   height: 757px;
@@ -2685,6 +2719,52 @@ h2 {
   left: 0;
   right: 0;
 }
+@media (min-width: 768px) {
+  .three-phones {
+    visibility: hidden;
+  }
+}
+.three-phones-container {
+  position: absolute;
+  top: 355px;
+  width: 1115px;
+  height: 1115px;
+  z-index: -1;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
+.three-phones-container__freeze {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  background-image: url("../video/ios/2-end.jpg");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .three-phones-container__freeze {
+    background-image: url("../video/ios/2-end-large.jpg");
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .three-phones-container__freeze {
+    background-image: url("../video/ios/2-end-large.jpg");
+  }
+}
+@media (max-width: 767px) {
+  .three-phones-container {
+    display: none;
+  }
+}
+.ended .three-phones-container__video {
+  display: none;
+}
+.ended .three-phones-container__freeze {
+  display: block;
+}
 .account-state-screenshot {
   width: 574px;
   height: 992px;
@@ -2693,6 +2773,63 @@ h2 {
   left: 0;
   right: 0;
 }
+@media (min-width: 768px) {
+  .account-state-screenshot {
+    visibility: hidden;
+  }
+}
+.account-state-screenshot-video {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  top: 260px;
+  width: 1335px;
+  height: 1335px;
+}
+.account-state-screenshot-video__freeze {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  background-image: url("../video/ios/3-end.jpg");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .account-state-screenshot-video__freeze {
+    background-image: url("../video/ios/3-end-large.jpg");
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .account-state-screenshot-video__freeze {
+    background-image: url("../video/ios/3-end-large.jpg");
+  }
+}
+.account-state-screenshot-video__overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(29%, black), color-stop(33%, rgba(0, 0, 0, 0.9)), color-stop(38%, rgba(0, 0, 0, 0.45)), color-stop(44%, transparent));
+  background-image: -webkit-linear-gradient(bottom, black 29%, rgba(0, 0, 0, 0.9) 33%, rgba(0, 0, 0, 0.45) 38%, transparent 44%);
+  background-image: -o-linear-gradient(bottom, black 29%, rgba(0, 0, 0, 0.9) 33%, rgba(0, 0, 0, 0.45) 38%, transparent 44%);
+  background-image: linear-gradient(to top, black 29%, rgba(0, 0, 0, 0.9) 33%, rgba(0, 0, 0, 0.45) 38%, transparent 44%);
+}
+@media (max-width: 767px) {
+  .account-state-screenshot-video {
+    display: none;
+  }
+}
+.ended .account-state-screenshot-video__video {
+  display: none;
+}
+.ended .account-state-screenshot-video__freeze {
+  display: block;
+}
 .three-phones-at-an-angle {
   width: 1702px;
   height: 1128px;
@@ -2700,6 +2837,50 @@ h2 {
   margin-top: -3%;
   margin-bottom: -520px;
   left: 50%;
+}
+@media (min-width: 768px) {
+  .three-phones-at-an-angle {
+    visibility: hidden;
+  }
+}
+.three-phones-at-an-angle-video {
+  width: 1500px;
+  height: 1500px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -713px;
+  z-index: -1;
+}
+@media (max-width: 767px) {
+  .three-phones-at-an-angle-video {
+    display: none;
+  }
+}
+.three-phones-at-an-angle-video__freeze {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  background-image: url("../video/ios/4-end.jpg");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .three-phones-at-an-angle-video__freeze {
+    background-image: url("../video/ios/4-end-large.jpg");
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .three-phones-at-an-angle-video__freeze {
+    background-image: url("../video/ios/4-end-large.jpg");
+  }
+}
+.ended .three-phones-at-an-angle-video__video {
+  display: none;
+}
+.ended .three-phones-at-an-angle-video__freeze {
+  display: block;
 }
 .screenshot-of-the-current-price {
   width: 600px;
@@ -2710,6 +2891,52 @@ h2 {
   left: 0;
   right: 0;
 }
+@media (min-width: 768px) {
+  .screenshot-of-the-current-price {
+    visibility: hidden;
+  }
+}
+.screenshot-of-the-current-price-video {
+  width: 1350px;
+  height: 1350px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: 200px;
+  z-index: -1;
+}
+@media (max-width: 767px) {
+  .screenshot-of-the-current-price-video {
+    display: none;
+  }
+}
+.screenshot-of-the-current-price-video__freeze {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  background-image: url("../video/ios/5-end.jpg");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .screenshot-of-the-current-price-video__freeze {
+    background-image: url("../video/ios/5-end-large.jpg");
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .screenshot-of-the-current-price-video__freeze {
+    background-image: url("../video/ios/5-end-large.jpg");
+  }
+}
+.ended .screenshot-of-the-current-price-video__video {
+  display: none;
+}
+.ended .screenshot-of-the-current-price-video__freeze {
+  display: block;
+}
 .horizontal-phone {
   width: 867px;
   height: 535px;
@@ -2718,6 +2945,52 @@ h2 {
   margin-right: auto;
   left: 0;
   right: 0;
+}
+@media (min-width: 768px) {
+  .horizontal-phone {
+    visibility: hidden;
+  }
+}
+.horizontal-phone-video {
+  width: 1085px;
+  height: 1085px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  top: -25px;
+  z-index: -1;
+}
+@media (max-width: 767px) {
+  .horizontal-phone-video {
+    display: none;
+  }
+}
+.horizontal-phone-video__freeze {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: none;
+  background-image: url("../video/ios/6-end.jpg");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .horizontal-phone-video__freeze {
+    background-image: url("../video/ios/6-end-large.jpg");
+  }
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .horizontal-phone-video__freeze {
+    background-image: url("../video/ios/6-end-large.jpg");
+  }
+}
+.ended .horizontal-phone-video__video {
+  display: none;
+}
+.ended .horizontal-phone-video__freeze {
+  display: block;
 }
 .phone-in-hand {
   width: 856px;
@@ -2740,8 +3013,18 @@ h2 {
     background-image: url("../img/phone-1-android-large.jpg");
   }
 }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .android .section-hero__img {
+    background-image: url("../img/phone-1-android-large.jpg");
+  }
+}
 .android .three-phones {
   background-image: url("../img/phone-2-android.jpg");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .android .three-phones {
+    background-image: url("../img/phone-2-android-large.jpg");
+  }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
   .android .three-phones {
@@ -2756,8 +3039,18 @@ h2 {
     background-image: url("../img/phone-3-android-large.jpg");
   }
 }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .android .account-state-screenshot {
+    background-image: url("../img/phone-3-android-large.jpg");
+  }
+}
 .android .three-phones-at-an-angle {
   background-image: url("../img/mp-1-bg-android.jpg");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .android .three-phones-at-an-angle {
+    background-image: url("../img/mp-1-bg-android-large.jpg");
+  }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
   .android .three-phones-at-an-angle {
@@ -2772,11 +3065,21 @@ h2 {
     background-image: url("../img/mp-2-bg-android-large.jpg");
   }
 }
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .android .screenshot-of-the-current-price {
+    background-image: url("../img/mp-2-bg-android-large.jpg");
+  }
+}
 .android .horizontal-phone {
   background-image: url(../img/mp-3-bg-android.jpg);
 }
 .android .phone-in-hand {
   background-image: url("../img/phone-4-android.jpg");
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
+  .android .phone-in-hand {
+    background-image: url("../img/phone-4-android-large.jpg");
+  }
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 144dpi) {
   .android .phone-in-hand {

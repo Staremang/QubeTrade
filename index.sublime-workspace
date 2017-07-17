@@ -1,0 +1,513 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"getAttribute"
+			],
+			[
+				"ite",
+				"item"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"i",
+				"important"
+			],
+			[
+				"mar",
+				"margin-left"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"ali",
+				"align-items"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"off",
+				"offset"
+			],
+			[
+				"of",
+				"offset"
+			],
+			[
+				"item",
+				"itemTop"
+			],
+			[
+				"time",
+				"timeLineYear"
+			],
+			[
+				"show",
+				"showTypeform"
+			],
+			[
+				"st",
+				"style\tAttr"
+			],
+			[
+				"s",
+				"style\tAttr"
+			],
+			[
+				"c",
+				"class\tAttr"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"font",
+				"font-family"
+			],
+			[
+				"data",
+				"dataVk"
+			],
+			[
+				"o",
+				"open"
+			],
+			[
+				"index",
+				"indexOf"
+			],
+			[
+				"fun",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 367.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 120.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Staremang/Downloads/transfonter.org-20170717-071717/stylesheet.css",
+		"/Users/Staremang/Documents/Libraries (js + etc)/fancybox-master/gulpfile.js",
+		"/Users/Staremang/Documents/Libraries (js + etc)/fancybox-master/package.json",
+		"/Users/Staremang/Documents/Libraries (js + etc)/fancybox-master/bower.json",
+		"/Users/Staremang/Documents/Libraries (js + etc)/fancybox-master/dist/jquery.fancybox.css",
+		"/Users/Staremang/Desktop/staremang.com/staremang.com/old/work/cradle_map/index.html",
+		"/Users/Staremang/Downloads/transfonter.org-20170711-121319/stylesheet.css",
+		"/Users/Staremang/Documents/PixelGun/js-source/jquery.onepage-scroll.js",
+		"/Users/Staremang/Documents/Proviant/js-source/jquery.onepage-scroll.js",
+		"/Users/Staremang/Documents/Proviant/js-source/main.js",
+		"/Users/Staremang/Downloads/onepage-scroll-master/jquery.onepage-scroll.js",
+		"/Users/Staremang/Downloads/onepage-scroll-master/onepage-scroll.css",
+		"/Users/Staremang/Documents/PixelGun/img/not-used/adv-1.svg",
+		"/Users/Staremang/Documents/PixelGun/img/adv-1.svg",
+		"/Users/Staremang/Documents/PixelGun/img/Google-Play-Badge.svg",
+		"/Users/Staremang/Documents/longer.ru/css-source/global.less",
+		"/Users/Staremang/Documents/fabrikant.ru/product.html",
+		"/Users/Staremang/Documents/Proviant/README.md",
+		"/Users/Staremang/Downloads/transfonter.org-20170704-131426/stylesheet.css",
+		"/Users/Staremang/Downloads/browser.js",
+		"/Users/Staremang/Documents/QubeTrade/img/Google play bage.svg",
+		"/Users/Staremang/Downloads/GIAG2.crl",
+		"/Users/Staremang/Desktop/BlcokMatrix/BlcokMatrix/Program.cs",
+		"/Users/Staremang/Desktop/BlcokMatrix/BlcokMatrix/Form1.cs",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/.htpasswd",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/passwd",
+		"/Users/Staremang/Documents/Filigran/img/ig-logo.svg",
+		"/Users/Staremang/Documents/Filigran/img/not-used/arrow.svg",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/main.min.js",
+		"/Users/Staremang/Documents/eddison.ru/css/main.min.css",
+		"/Users/Staremang/Google Drive/АВТФ/2 курс/4 семестр/ТИМП/АБ-520/lab2/lab2/sample.cu",
+		"/Users/Staremang/Google Drive/АВТФ/2 курс/4 семестр/ТИМП/АБ-520/lab1/lab1/lab1.cpp",
+		"/Users/Staremang/Downloads/jquery-ui-1.12.1.custom/jquery-ui.js",
+		"/Users/Staremang/Downloads/jquery-ui-1.12.1.custom/package.json",
+		"/Users/Staremang/Downloads/Запрос цены 2/user.json",
+		"/Users/Staremang/Downloads/Запрос цены 2/meta.json",
+		"/Users/Staremang/Downloads/Запрос цены 2/document.json",
+		"/Users/Staremang/Downloads/Sketch.app/Contents/_CodeSignature/CodeResources",
+		"/Users/Staremang/Library/Application Support/com.bohemiancoding.sketch3/.license",
+		"/Volumes/Sketch v43.1/Open Gatekeeper friendly",
+		"/Users/Staremang/Google Drive/АВТФ/2 курс/4 семестр/ТИМП/АБ-520/lab3/SobelFilter_kernels.cu",
+		"/Users/Staremang/Google Drive/АВТФ/2 курс/4 семестр/ТИМП/АБ-520/lab3/SobelFilter_kernels.h",
+		"/Users/Staremang/Google Drive/АВТФ/2 курс/4 семестр/ТИМП/АБ-520/lab3/SobelFilter.cpp",
+		"/Users/Staremang/Google Drive/АВТФ/2 курс/4 семестр/ТИП/АБ-520/lab1/lab1/lab1.cpp",
+		"/Users/Staremang/Google Drive/АВТФ/2 курс/4 семестр/ТИП/АБ-520/lab2/lab2/sample.cu",
+		"/Volumes/Untitled/ТИП/АБ-520/lab1/lab1/targetver.h",
+		"/Volumes/Untitled/ТИП/АБ-520/lab1/lab1/stdafx.h",
+		"/Volumes/Untitled/ТИП/АБ-520/lab1/lab1/stdafx.cpp",
+		"/Volumes/Untitled/ТИП/АБ-520/lab1/lab1/lab1.cpp",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/main.css",
+		"/Users/Staremang/Downloads/Попап. Запрос цены.sketch",
+		"/Volumes/C/Windows/System32/drivers/etc/hosts",
+		"/Users/Staremang/Desktop/scripts/1.js",
+		"/Users/Staremang/Documents/New-Pikabu-Design/New-Pikabu-Design.css",
+		"/Users/Staremang/Documents/New-Pikabu-Design/Formatted.css",
+		"/Users/Staremang/Downloads/icons/1.svg",
+		"/Users/Staremang/Downloads/icons/2.svg",
+		"/Users/Staremang/Downloads/icons/3.svg",
+		"/Users/Staremang/Downloads/ПаЃ•™в7/ПаЃ•™в7/UpperLevel.h",
+		"/Users/Staremang/Documents/eddison.ru/css/main.css",
+		"/Users/Staremang/Downloads/ПаЃ•™в7/ПаЃ•™в7/main.cpp",
+		"/Users/Staremang/Downloads/ПаЃ•™в7/ПаЃ•™в7/LowerLevel.h",
+		"/Users/Staremang/Downloads/transfonter.org-20170508-132209/stylesheet.css",
+		"/Users/Staremang/Documents/eddison.ru/js-source/main.js",
+		"/Users/Staremang/Downloads/transfonter.org-20170501-154936/stylesheet.css",
+		"/Users/Staremang/Documents/MarineTrade/img/waves.svg",
+		"/Users/Staremang/Downloads/fancybox-3.0/src/css/core.css",
+		"/Users/Staremang/Documents/fabrikant.ru/index.html",
+		"/Users/Staremang/Documents/fabrikant.ru/css-source/global.less",
+		"/Users/Staremang/Documents/fabrikant.ru/README.md",
+		"/Users/Staremang/Downloads/selectize.js-master/examples/js/index.js",
+		"/Users/Staremang/Downloads/selectize.js-master/examples/api.html",
+		"/Users/Staremang/Downloads/Монтажная область 1.svg",
+		"/Users/Staremang/Documents/fabrikant.ru/img/not-used/Vector Smart Object.ai",
+		"/Users/Staremang/Documents/eddison.ru/js/anchor.js",
+		"/Users/Staremang/Downloads/svg4everybody-master/dist/svg4everybody.min.js",
+		"/Users/Staremang/Downloads/svg4everybody-master/dist/svg4everybody.js",
+		"/Users/Staremang/Desktop/scripts/12.txt",
+		"/Users/Staremang/Desktop/scripts/1.bat",
+		"/Users/Staremang/Google Drive/АВТФ/2 курс/4 семестр/Безопасность ОС/ЛР2/sc.txt",
+		"/Users/Staremang/Documents/footer.tpl",
+		"/Users/Staremang/Documents/SSL",
+		"/Users/Staremang/Documents/canonical/canonical.site.key",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/.htaccess",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/canonical.site.key",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/canonical.site.crt",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/openssl.cnf",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/main.min.css",
+		"/Users/Staremang/Documents/fabrikant.ru/img/not-used/pager-item-back.svg",
+		"/Users/Staremang/Documents/fabrikant.ru/img/not-used/ic_arrow-down.svg",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/common.js",
+		"/Users/Staremang/Desktop/v.1.7.2 (15 февраля 2017).md",
+		"/Users/Staremang/Downloads/transfonter.org-20170401-055223/stylesheet.css",
+		"/Users/Staremang/Downloads/Сертификат canonical.site.txt",
+		"/Users/Staremang/Downloads/Сертификат canonical.site",
+		"/Users/Staremang/Downloads/catalog_wp.js",
+		"/Users/Staremang/Downloads/react.min.js",
+		"/Users/Staremang/Documents/fabrikant.ru/img/Rectangle 5.svg",
+		"/Users/Staremang/Downloads/bootstrap-4.0.0-alpha.6/dist/css/bootstrap-grid.css",
+		"/Users/Staremang/Downloads/bootstrap-4.0.0-alpha.6/dist/css/bootstrap-grid.min.css",
+		"/Users/Staremang/Downloads/bootstrap-4.0.0-alpha.6/dist/css/bootstrap.css.map",
+		"/Users/Staremang/Downloads/OwlCarousel2-2.0.0-beta.3/dist/owl.carousel.js",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/calc.php",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/error.php",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/index.php",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/README.md",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/50-landscape-sysinfo",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/issue.net",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/hosts",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/hostname",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/login.defs",
+		"/Users/Staremang/Downloads/Ницше - Так говорил Заратустра (пер. Антоновский).epub",
+		"/Users/Staremang/Downloads/OwlCarousel2-2.2.1/LICENSE",
+		"/Users/Staremang/Downloads/transfonter.org-20170316-180404/HelveticaNeueCyr-Thin.ttf",
+		"/Users/Staremang/Downloads/transfonter.org-20170316-180404/HelveticaNeueCyr-Thin.eot",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/sudoers",
+		"/Users/Staremang/Downloads/[rutracker.org].t5316364.torrent",
+		"/Users/Staremang/Documents/canonical/prepros.cfg",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-2/default",
+		"/Users/Staremang/Documents/Flags",
+		"/Users/Staremang/Library/Fonts/MagistralBlack.TTF",
+		"/Applications/Adobe Illustrator CC 2017/AIFeatures.cfg",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-1/index.html",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-1/Немножко увлекся 1280х900",
+		"/private/var/folders/ck/gg3v_qzn4kv0gq6gfv_j0ydh0000gn/T/fz3temp-1/test",
+		"/Users/Staremang/Library/Application Support/com.apple.sharedfilelist/com.apple.LSSharedFileList.ApplicationRecentDocuments/com.apple.garageband10.sfl",
+		"/Users/Staremang/Documents/ea_farm/Spritesheet/getTextures.txt",
+		"/Users/Staremang/Downloads/еууеую.txt"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"responsiveFallback",
+			"}\n",
+			"InitCUDA",
+			"license",
+			"section.map",
+			"section.map .mag_list li",
+			"#blk-upcoming",
+			".b-profile",
+			";\n",
+			"#ediprofile_menu",
+			"{\n",
+			"table#header_t .menu li a:hover",
+			"none",
+			"05bf54",
+			".header-cont",
+			".header-cont>div",
+			".header-cont > div",
+			", ",
+			"месяцами",
+			");\n",
+			"Æipí\u001cç))\u0005óUh\u001bæ_ñ",
+			"\");\n",
+			");\n",
+			"x-categories-menu__title",
+			"213.228.88.223",
+			"green.php",
+			"cli",
+			"[",
+			"character-set-server",
+			"skip-character-set-client-handshake",
+			"AllowUsers",
+			" ko",
+			"den",
+			"gol",
+			"----------------------",
+			"<<>> DiG 9.8.3-P1 <<>> ",
+			"\n;; AUTHORITY SECTION:\n160.10.in-addr.arpa.\t86400\tIN\tNS\tns.hostel.nstu.ru.\n",
+			"https://pp.vk.me/c626928/v626928680/30d35/-vW3sT_uiYo.jpg",
+			"https://pp.vk.me/c628025/v628025659/27bf1/zd427DX3Y94.jpg",
+			".fa-bell-o",
+			"background: url(http://cs5.pikabu.ru/images/previews_comm/2015-08_3/1439470375184296867.png);",
+			".b-logo",
+			".menu-subs-tabs>span",
+			"input#note_text",
+			".profile_wrap",
+			".profile_wrap ",
+			"table#header_t .menu li a",
+			".b-user-menu__header a:hover:before",
+			"й",
+			"╗",
+			"╔",
+			"║",
+			"╚",
+			"╝",
+			"═",
+			"accept-encoding",
+			"roman",
+			"cookie",
+			"();",
+			"$(\".js-calculator\")",
+			"()\n",
+			"asset_path(\"",
+			".png",
+			"/assets/",
+			".png",
+			"/assets/",
+			"asse",
+			"src=\"/assets/",
+			".png')\"",
+			"url('/assets/",
+			"asse",
+			".jpg)",
+			".jpg",
+			"/assets/",
+			".png\"",
+			".jpg\"",
+			"/assets/",
+			">\n",
+			"-->\n",
+			"img/",
+			";\n",
+			"fa fa-heart",
+			"product-thumb",
+			">\n",
+			"\n</head>",
+			">\n",
+			"#blk-upcoming",
+			" \n",
+			"background:",
+			"!important!",
+			"}",
+			";",
+			"!important;",
+			"!important"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			",",
+			"\n----------------------",
+			"---------------------- ",
+			"",
+			".b-user-profile-notes",
+			".b-user-profile",
+			"а",
+			"█",
+			"asset_path(\"assets/",
+			".png\") %>",
+			"<%= asset_path(\"",
+			".png\") %>",
+			"<%= asset_path(\"",
+			"src=\"<%= asset_path(\"",
+			".png\") %>')\"",
+			"url('<%= asset_path(\"",
+			".jpg\") %>",
+			"<%= asset_path(\"",
+			".png\") %>\"",
+			".jpg\") %>\"",
+			"\") %>\"",
+			"<%= asset_path(\"",
+			"/assets/",
+			"!",
+			"!important;",
+			";"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
