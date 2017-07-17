@@ -1,3 +1,6 @@
+// var url = {
+// 	'ios': ['video/ios/1.mp4', 'video/ios/2.mp4', 'video/ios/3.mp4', 'video/ios/4.mp4', 'video/ios/5.mp4', 'video/ios/6.mp4',]
+// }
 function ready(fn) {
 	if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
 		fn();
@@ -35,25 +38,57 @@ Element.prototype.viewChecker = function (options) {
 	// 	};
 	// };
 	var trigger = false,
-		el = this;
+		canPlay = false,
+		played = false,
+		el = this,
+		video = el.children[0];
 
+	if (document.getElementsByTagName('video')[0].canPlayType("video/mp4") !== '') {
 
-	attachEvent(window, "scroll", visibleTrigger);
-	attachEvent(window, "resize", visibleTrigger);
-	visibleTrigger();
+		video.setAttribute('preload', 'none');
+
+		if (navigator.platform.indexOf('Mac') !== -1 || navigator.platform.indexOf('iPhone') !== -1) {
+			video.setAttribute('src', 'video/ios/' + options);
+		} else {
+			video.setAttribute('src', 'video/android/' + options);
+		}
+
+		video.load();
+
+		video.addEventListener('canplaythrough', function () {
+			canPlay = true;
+			visibleTrigger();
+		})
+		attachEvent(video, 'error', end);
+		attachEvent(window, "scroll", visibleTrigger);
+		attachEvent(window, "resize", visibleTrigger);
+		visibleTrigger();
+	} else {
+		end();
+	}
 
 	function visibleTrigger () {
-		if (isVisible() && !trigger) {
-			trigger = true;
-			start();
+		if (isVisible() && !played) {
+
+			if (canPlay) {
+				played = true;
+				start();
+				console.log('play');
+			} else {
+				setTimeout(function () {
+					if (!canPlay) {
+						end();
+					}
+				}, 8000)
+			}
 		}
 	};
 
 	function start () {
-		el.children[0].play();
-		el.children[0].classList.add('animated');
-		el.children[0].classList.add('fadeIn');
-		el.children[0].addEventListener('ended', end)
+		video.play();
+		video.classList.add('animated');
+		video.classList.add('fadeIn');
+		video.addEventListener('ended', end)
 	};
 	function end () {
 		el.classList.add('ended');
@@ -76,17 +111,17 @@ Element.prototype.viewChecker = function (options) {
 
 ready(function () {
 	if (navigator.platform.indexOf('Mac') !== -1 || navigator.platform.indexOf('iPhone') !== -1) {
-		document.querySelector('body').classList.add('ios')
+		document.body.classList.add('ios')
 	} else {
-		document.querySelector('body').classList.add('android')
+		document.body.classList.add('android')
 	}
-	document.querySelector('.section-hero__video-container').viewChecker();
-	document.querySelector('.three-phones-container').viewChecker();
-	document.querySelector('.account-state-screenshot-video').viewChecker();
-	document.querySelector('.three-phones-at-an-angle-video').viewChecker();
-	document.querySelector('.screenshot-of-the-current-price-video').viewChecker();
-	document.querySelector('.horizontal-phone-video').viewChecker();
-	
+	document.querySelector('.section-hero__video-container').viewChecker('1.mp4');
+	document.querySelector('.three-phones-container').viewChecker('2.mp4');
+	document.querySelector('.account-state-screenshot-video').viewChecker('3.mp4');
+	document.querySelector('.three-phones-at-an-angle-video').viewChecker('4.mp4');
+	document.querySelector('.screenshot-of-the-current-price-video').viewChecker('5.mp4');
+	document.querySelector('.horizontal-phone-video').viewChecker('6.mp4');
+
 //	fadeIn(document.querySelector('.section-hero__video'));
 	// document.querySelector('.section-hero__video').play();
 //	document.querySelector('.section-hero__video').style.opacity = 0;

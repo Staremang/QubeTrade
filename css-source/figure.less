@@ -50,7 +50,12 @@ video {
 	// }
 	&__freeze {
 		.freeze ();
-		.bg("../video/ios/", "2-end", "jpg");
+		.ios & {
+			.bg("../video/ios/", "2-end", "jpg");
+		}
+		.android & {
+			.bg("../video/android/", "2-end", "jpg");
+		}
 	}
 
 	@media (max-width: 767px) {
@@ -88,7 +93,12 @@ video {
 	// }
 	&__freeze {
 		.freeze ();
-		.bg("../video/ios/", "3-end", "jpg");
+		.ios & {
+			.bg("../video/ios/", "3-end", "jpg");
+		}
+		.android & {
+			.bg("../video/android/", "3-end", "jpg");
+		}
 	}
 	&__overlay {
 		position: absolute;
@@ -142,7 +152,12 @@ video {
 
 	&__freeze {
 		.freeze ();
-		.bg("../video/ios/", "4-end", "jpg");
+		.ios & {
+			.bg("../video/ios/", "4-end", "jpg");
+		}
+		.android & {
+			.bg("../video/android/", "4-end", "jpg");
+		}
 	}
 
 	.ended & {
@@ -181,7 +196,12 @@ video {
 
 	&__freeze {
 		.freeze ();
-		.bg("../video/ios/", "5-end", "jpg");
+		.ios & {
+			.bg("../video/ios/", "5-end", "jpg");
+		}
+		.android & {
+			.bg("../video/android/", "5-end", "jpg");
+		}
 	}
 
 	.ended & {
@@ -220,7 +240,12 @@ video {
 
 	&__freeze {
 		.freeze ();
-		.bg("../video/ios/", "6-end", "jpg");
+		.ios & {
+			.bg("../video/ios/", "6-end", "jpg");
+		}
+		.android & {
+			.bg("../video/android/", "6-end", "jpg");
+		}
 	}
 
 	.ended & {
