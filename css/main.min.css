@@ -2082,7 +2082,7 @@ h2 {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
-.phone-in-hand-container .button {
+.phone-in-hand-container .button:not(.store-bage) {
   background-color: rgba(14, 14, 14, 0.9);
 }
 .button_fill {

@@ -530,7 +530,9 @@ h2 {
 	text-decoration: none;
 	margin: 0 14px;
 	.phone-in-hand-container & {
-	    background-color: rgba(14, 14, 14, 0.9);
+		&:not(.store-bage) {
+		    background-color: rgba(14, 14, 14, 0.9);
+		}
 	}
     transform: translateZ(0);
 	&_fill {
