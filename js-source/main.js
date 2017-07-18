@@ -37,6 +37,7 @@ Element.prototype.viewChecker = function (options) {
 	// 		};
 	// 	};
 	// };
+
 	var trigger = false,
 		canPlay = false,
 		played = false,
@@ -48,9 +49,9 @@ Element.prototype.viewChecker = function (options) {
 		video.setAttribute('preload', 'none');
 
 		if (navigator.platform.indexOf('Mac') !== -1 || navigator.platform.indexOf('iPhone') !== -1) {
-			video.setAttribute('src', 'video/ios/' + options);
+			video.setAttribute('src', 'video_ios/' + options);
 		} else {
-			video.setAttribute('src', 'video/android/' + options);
+			video.setAttribute('src', 'video_android/' + options);
 		}
 
 		video.load();
@@ -117,9 +118,9 @@ ready(function () {
 	}
 	document.querySelector('.section-hero__video-container').viewChecker('1.mp4');
 	document.querySelector('.three-phones-container').viewChecker('2.mp4');
-	document.querySelector('.account-state-screenshot-video').viewChecker('3.mp4');
+	// document.querySelector('.account-state-screenshot-video').viewChecker('3.mp4');
 	document.querySelector('.three-phones-at-an-angle-video').viewChecker('4.mp4');
-	document.querySelector('.screenshot-of-the-current-price-video').viewChecker('5.mp4');
+	// document.querySelector('.screenshot-of-the-current-price-video').viewChecker('5.mp4');
 	document.querySelector('.horizontal-phone-video').viewChecker('6.mp4');
 
 //	fadeIn(document.querySelector('.section-hero__video'));

@@ -1,5 +1,21 @@
 @media (max-width: 768px) {
 	
+	.title-soon {
+		display: inline-block;
+		position: relative;
+		&:after {
+			right: auto;
+			bottom: auto;
+			font-size: 10px;
+			border-radius: 5px;
+			line-height: 18px;
+			width: 62px;
+			position: relative;
+			display: inline-block;
+			margin-left: 10px;
+			vertical-align: middle;
+		}
+	}
 	.section-hero {
 		padding: 27px 0 74px;
 		.best-bage {
@@ -14,17 +30,39 @@
 			line-height: 31.5px;
 			padding: 0 15px;
 		}
-		&__list {
+		&__info {
+
 			text-align: center;
 			list-style: none;
 			margin-left: -320/2px;
 			width: 320px;
+
+			margin-top: 41px;
+			margin-bottom: 0;
+		}
+		&__soon-list {
+			font-size: 14.4px;
+			line-height: 21.6px;
+		}
+		&__soon-title {
+			font-size: 14.4px;
+			line-height: 32.4px;
+			padding-bottom: 4px;
+			margin-bottom: 15px;
+			&:after {
+				width: 182px;
+				left: 0;
+				margin: 0 auto;
+			}
+		}
+		&__store-link {
+			margin-bottom: 16px;
+		}
+		&__list {
 			font-size: 24px;
 			line-height: 36px;
 			padding: 0;
-
-			margin-top: 23px;
-			margin-bottom: 0;
+			margin-bottom: 27px;
 		}
 		&__img {
 			width: 630px * 220/488px;
@@ -76,24 +114,43 @@
 		}
 
 
-		&-button {
-			border-radius: 2.74px;
-			font-size: 9px;
-			text-shadow: 0 1px 1px rgba(92,104,114,0.64);
-			padding: 0 15px;
-			line-height: 14px;
-		}
+	}
+	.header-button {
+		border-radius: 2.74px;
+		border-width: 1px;
+		font-size: 9px;
+		text-shadow: 0 1px 1px rgba(92,104,114,0.64);
+		padding: 1px 10px;
+		line-height: 14px;
 	}
 	.advantages {
 		&__item {
 			min-width: 50%;
 			flex: 0 0 50%;
 			height: 50vw;
-			padding: 10px 10px 10px 800/144%;
+			padding: 0 10px 0 800/144%;
+
+			&_soon {
+				&:before {
+					content: 'скоро';
+					position: absolute;
+					border: 1px solid #979797;
+					border-radius: 0.5em;
+					line-height: 1.8em;
+					padding: 0px 1.6em;
+					font-size: 100vw * 7/320;
+					color: white;
+
+					top: 100*28/160%;
+					left: 100*52/160%;
+				}
+			}
 		}
 		&__icon {
-			width: 100vw * 18/320;
-			height: 100vw * 18/320;
+			width: 100vw * 25/320;
+			height: 100vw * 19/320;
+			margin-top: 100*26/320vw;
+			// margin-left: 100*2/320vw;
 		}
 		&__text {
 			font-size: 200vw*22/1440;
@@ -145,8 +202,8 @@
 	.action-list {
 		font-size: 16px;
 		line-height: 23px;
-		max-width: 320px;
-		margin-left: -160px;
+	    max-width: 250px;
+	    margin-left: -130px;
 		padding-left: 40px;
 		&__item {
 			&:before {
@@ -217,8 +274,17 @@
 		margin-bottom: -40-46px;
 		margin-top: -15px;
 	}
-//	
-//	.phone-in-hand-container {
-//		padding-bottom: 40px;
-//	}
+
+	.phone-in-hand-container {
+		padding-bottom: 22px;
+		.button {
+			margin-bottom: 10px;
+		}
+	}
+	.footer {
+		&__content {
+			height: auto;
+			padding: 15px 15px 60px;
+		}
+	}
 }
