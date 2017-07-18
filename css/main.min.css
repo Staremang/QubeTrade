@@ -1669,6 +1669,11 @@ h2 {
 .section_gray {
   background: #121212;
 }
+@media (min-width: 768px) {
+  .section_gray {
+    background: black;
+  }
+}
 .section_last {
   background: #121212;
 }
@@ -1764,8 +1769,8 @@ h2 {
   margin-bottom: 46px;
 }
 .section-hero__img {
-  width: 630px;
-  height: 715px;
+  width: 641px;
+  height: 765px;
   background-size: contain;
   background-repeat: no-repeat;
   left: 50%;
@@ -1867,19 +1872,19 @@ h2 {
   background-position: center bottom;
 }
 .advantages__item:nth-child(1) {
-  background-color: black;
+  background-color: #101010;
   background-image: url(../img/advantages-1.png);
 }
 .advantages__item:nth-child(2) {
-  background-color: #111;
+  background-color: #0c0c0c;
   background-image: url(../img/advantages-2.png);
 }
 .advantages__item:nth-child(3) {
-  background-color: black;
+  background-color: #101010;
   background-image: url(../img/advantages-3.png);
 }
 .advantages__item:nth-child(4) {
-  background-color: #1C1C1C;
+  background-color: #0a0a0a;
   background-image: url(../img/advantages-4.png);
 }
 .advantages__item_soon:before {
@@ -1895,20 +1900,16 @@ h2 {
   left: 27.77777778%;
 }
 .advantages__icon {
-  width: 2.77777778vw;
+  width: 3.19444444vw;
   height: 2.77777778vw;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
   margin-top: 4.09722222vw;
   overflow: hidden;
 }
@@ -2081,6 +2082,9 @@ h2 {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }
+.phone-in-hand-container .button {
+  background-color: rgba(14, 14, 14, 0.9);
+}
 .button_fill {
   background: #424242;
 }
@@ -2116,6 +2120,15 @@ h2 {
 }
 .mp-2 h1 {
   margin-top: 62px;
+}
+@media (max-width: 768px) {
+  .mp-2 h1 {
+    max-width: 220px;
+    line-height: 30px;
+    letter-spacing: -0.13px;
+    font-size: 22px;
+    margin-top: 44px;
+  }
 }
 .action-list {
   max-width: 550px;
@@ -2321,8 +2334,8 @@ video {
   max-height: 100%;
 }
 .three-phones {
-  width: 1024px;
-  height: 757px;
+  width: 1118px;
+  height: 810px;
   margin-top: 65px;
   margin-bottom: 140px;
   max-width: 90%;
@@ -2619,8 +2632,8 @@ video {
   display: block;
 }
 .horizontal-phone {
-  width: 867px;
-  height: 535px;
+  width: 971px;
+  height: 475px;
   max-width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -2690,8 +2703,8 @@ video {
   display: block;
 }
 .phone-in-hand {
-  width: 856px;
-  height: 992px;
+  width: 1027px;
+  height: 960px;
   margin-left: -630px;
   margin-bottom: -226px;
   left: 50%;
@@ -2850,6 +2863,13 @@ video {
   }
 }
 @media (max-width: 768px) {
+  h1,
+  h2 {
+    font-size: 22px;
+    line-height: 26px;
+    letter-spacing: -0.12px;
+    margin: 40px auto 30px;
+  }
   .title-soon {
     display: inline-block;
     position: relative;
@@ -2914,13 +2934,13 @@ video {
     margin-bottom: 27px;
   }
   .section-hero__img {
-    width: 284.01639344px;
-    height: 322.33606557px;
+    width: 288.97540984px;
+    height: 344.87704918px;
     background-size: contain;
     background-repeat: no-repeat;
     left: 50%;
-    margin-left: -123px;
-    margin-top: 10px;
+    margin-left: -140px;
+    margin-top: 30px;
     position: relative;
   }
   .best-bage {
@@ -3006,13 +3026,6 @@ video {
     font-size: 10px;
     margin-top: -19px;
   }
-  h1,
-  h2 {
-    font-size: 24px;
-    line-height: 36px;
-    letter-spacing: -0.05px;
-    margin: 40px auto 30px;
-  }
   .bage-container {
     margin-top: -6px;
     margin-bottom: -6px;
@@ -3049,10 +3062,17 @@ video {
     top: 3px;
   }
   .three-phones {
-    width: 310.41916168px;
-    height: 229.47979042px;
-    margin-top: 46.86046512px;
-    margin-bottom: 39.15254237px;
+    width: 303.38600451px;
+    height: 219.41309255px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    max-width: 340px;
+  }
+  .how-worked {
+    padding-bottom: 50px;
+  }
+  .how-worked h2 {
+    line-height: 36px;
   }
   .account-state-screenshot {
     width: 179.78113208px;
@@ -3073,10 +3093,9 @@ video {
     margin-top: -20px;
   }
   .horizontal-phone {
-    width: 271.18953488px;
-    height: 167.34302326px;
-    margin-top: -15px;
-    margin-bottom: -25px;
+    width: 303.71976744px;
+    height: 148.5755814px;
+    margin-top: 15px;
   }
   .button {
     width: 132px;
@@ -3091,10 +3110,10 @@ video {
     width: 210px;
   }
   .phone-in-hand {
-    width: 266.65968586px;
-    height: 309.02617801px;
-    margin-left: -196.2565445px;
-    margin-bottom: -86px;
+    width: 360.2565445px;
+    height: 336.7539267px;
+    margin-left: -270px;
+    margin-bottom: -135px;
     margin-top: -15px;
   }
   .phone-in-hand-container {

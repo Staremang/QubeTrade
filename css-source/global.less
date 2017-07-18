@@ -168,9 +168,9 @@ h2 {
 	&_gray {
 		background: #121212;
 
-		// @media (min-width: 768px) {
-		// 	background: black;
-		// }
+		@media (min-width: 768px) {
+			background: black;
+		}
 	}
 	&_last {
 		background: #121212;
@@ -264,8 +264,8 @@ h2 {
 		margin-bottom: 46px;
 	}
 	&__img {
-		width: 630px;
-		height: 715px;
+		width: 641px;
+		height: 765px;
 		
 		background-size: contain;
 		background-repeat: no-repeat;
@@ -357,19 +357,19 @@ h2 {
 		background-size: contain;
 		background-position: center bottom;
 		&:nth-child(1) {
-			background-color: black;
+			background-color: #101010;
 			background-image: url(../img/advantages-1.png);
 		}
 		&:nth-child(2) {
-			background-color: #111;
+			background-color: #0c0c0c;
 			background-image: url(../img/advantages-2.png);
 		}
 		&:nth-child(3) {
-			background-color: black;
+			background-color: #101010;
 			background-image: url(../img/advantages-3.png);
 		}
 		&:nth-child(4) {
-			background-color: #1C1C1C;
+			background-color: #0a0a0a;
 			background-image: url(../img/advantages-4.png);
 		}
 		&_soon {
@@ -389,11 +389,11 @@ h2 {
 		}
 	}
 	&__icon {
-		width: 100vw * 40/1440;
+		width: 100vw * 46/1440;
 		height: 100vw * 40/1440;
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		align-items: flex-end;
+		// justify-content: f;
 		margin-top: 100vw * 59/1440;
 		overflow: hidden;
 		> svg {
@@ -529,7 +529,9 @@ h2 {
 	text-transform: uppercase;
 	text-decoration: none;
 	margin: 0 14px;
-	
+	.phone-in-hand-container & {
+	    background-color: rgba(14, 14, 14, 0.9);
+	}
     transform: translateZ(0);
 	&_fill {
 		background: #424242;
@@ -544,32 +546,38 @@ h2 {
 	background-repeat: no-repeat;
 	border-color: #424242;
 }
-.mp { // Meaningless pictures
-	&-1 {
-	    padding-bottom: 465px;
-		// background: url(/img/rm/3screen-m.png) no-repeat center top;
-		h1 {
-			max-width: 700px;
-			margin-left: auto;
-			margin-right: auto;
-			left: 0;
-			right: 0;
-			margin-top: 49px;
-			margin-bottom: 60px;
-			line-height: 78px;
-			@media (max-width: 768px) {
-				line-height: 30px;
-				font-size: 22px;
+// Meaningless pictures
+.mp-1 {
+    padding-bottom: 465px;
+	// background: url(/img/rm/3screen-m.png) no-repeat center top;
+	h1 {
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		margin-top: 49px;
+		margin-bottom: 60px;
+		line-height: 78px;
+		@media (max-width: 768px) {
+			line-height: 30px;
+			font-size: 22px;
 
-			    margin-top: 46px;
-			    margin-bottom: 31px;
-			}
+		    margin-top: 46px;
+		    margin-bottom: 31px;
 		}
 	}
-	&-2 {
-		// background: url(/img/rm/4screen.png) no-repeat center top;
-		h1 {
-			margin-top: 62px;
+}
+.mp-2 {
+	// background: url(/img/rm/4screen.png) no-repeat center top;
+	h1 {
+		margin-top: 62px;
+		@media (max-width: 768px) {
+			max-width: 220px;
+			line-height: 30px;
+			letter-spacing: -0.13px;
+			font-size: 22px;
+			margin-top: 44px;
 		}
 	}
 }
