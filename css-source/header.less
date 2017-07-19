@@ -1,0 +1,251 @@
+@orange: 		#F79D42;
+
+@font-sf-ns-text: "SF UI Text", "San Francisco", sans-serif;
+@font-sf-ns-display: "SF UI Display", "San Francisco", sans-serif;
+@font-roboto: "Roboto", sans-serif;
+
+body {
+	margin: 0;
+	background: black;
+	font-family: @font-sf-ns-display;
+}
+.header {
+	&__content {
+		border-bottom: 1px solid #3d3d3d;
+		height: 98px;
+		max-width: 1140px;
+		margin: 0 auto;
+		background: black;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@media (max-width: 1140px) {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+	}
+	&__menu {
+		display: flex;
+		align-items: center;
+	}
+	&__menu-btn {
+		display: none;
+	}
+	&-logo {
+		width: 217px;
+		height: 46px;
+		display: inline-flex;
+	}
+	&-switch {
+//		width: 150px;
+		height: 30px;
+		border: 1.5px solid #5B5B5B;
+		border-radius: 16px;
+		font-family: @font-sf-ns-text;
+		font-size: 11px;
+		font-weight: bold;
+		display: inline-flex;
+		&__item {
+			text-transform: uppercase;
+			color: #5B5B5B;
+			padding: 0 14px;
+			line-height: 29px;
+			margin: -1px;
+			&.active {
+				background: #5B5B5B;
+				border-radius: 15px;
+				color: white;
+			}
+		}
+	}
+	&-lang {
+		margin-left: 47px;
+		margin-right: 51px;
+		
+		cursor: pointer;
+		&__flag {
+			vertical-align: middle;
+			margin-right: 7px;
+		}
+		&:after {
+			content: '';
+			background-image: url(../img/arrow-down.svg);
+			background-repeat: no-repeat;
+			background-size: 12px 8px;
+			width: 12px;
+			height: 8px;
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
+	
+}
+
+	
+.header-button {
+	border-radius: 6.34px;
+	border: 3px solid #F89D44;
+	font-family: @font-sf-ns-text;
+	font-size: 18px;
+	color: #F89D44;
+
+	padding: 5px 50px;
+	line-height: 34px;
+	text-decoration: none;
+}
+.section-hero {
+	// background: url(/img/rm/1.png) center -108px no-repeat;
+	text-align: center;
+	color: white;
+	font-family: @font-sf-ns-display;
+	position: relative;
+	padding: 51px 0 72px;
+	overflow: hidden;
+	z-index: 0;
+	.best-bage {
+		margin-bottom: 55px;
+		margin-top: 4px;
+	}
+	&__title {
+		font-size: 64px;
+		text-transform: uppercase;
+		.orange {
+			color: #D59967;
+		}
+	}
+	&__text {
+		font-size: 30px;
+		color: #919191;
+		max-width: 920px;
+		margin: 0 auto;
+		line-height: 45px;
+	}
+	&__soon-list {
+		font-size: 30px;
+		color: #919191;
+		line-height: 46px;
+		text-transform: uppercase;
+		list-style: none;
+		padding-left: 0;
+		padding-right: 6px;
+		margin: 0;
+	}
+	&__soon-title {
+		font-size: 30px;
+		color: #919191;
+		line-height: 45px;
+		margin-right: 15px;
+		position: relative;
+		margin-bottom: 19px;
+		padding-bottom: 14px;
+		&:after {
+			content: '';
+			width: 252px;
+			height: 1px;
+			background: #5B5B5B;
+			position: absolute;
+			bottom: 0;
+			right: -4px;
+		}
+	}
+	&__info {
+		text-align: right;
+		left: 50%;
+		margin-left: -540px;
+		width: 400px;
+		position: relative;
+		
+		margin-top: 215px;
+		margin-bottom: 183px;
+	}
+	&__store-link {
+		display: flex;
+	    justify-content: center;
+	    margin-bottom: 60px;
+	}
+	&__list {
+		list-style: none;
+		font-size: 40px;
+		line-height: 60px;
+		text-transform: uppercase;
+		padding-left: 0;
+		margin-top: 0;
+		margin-bottom: 46px;
+	}
+	&__img {
+		width: 641px;
+		height: 765px;
+		
+		background-size: contain;
+		background-repeat: no-repeat;
+		
+		left: 50%;
+		margin-left: -75px;
+		top: 0;
+		margin-top: 200px;
+		position: absolute;
+		@media (min-width: 768px) {
+			display: none;
+		}
+	}
+	&__video {
+		max-height: 100%;
+		max-width: 100%;
+		opacity: 0;
+	}
+	&__freeze {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		display: none;
+
+		.ios & {
+
+			background-image: url("../video_ios/1-end.jpg");
+			@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+				background-image: url("../video_ios/1-end-large.jpg");
+			}
+		}
+		.android & {
+
+			background-image: url("../video_android/1-end.jpg");
+			@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 1.5dppx), (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi) {
+				background-image: url("../video_android/1-end-large.jpg");
+			}
+		}
+	}
+	&__overlay {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+		background: linear-gradient(to top, black 40%, transparent 51%);
+	}
+	&__video-container {
+		// visibility: hidden;
+
+		position: absolute;
+		top: 0;
+		z-index: -1;
+		width: 1500px;
+		height: 1500px;
+		left: 50%;
+		transform: translate(-33%, 0);
+		@media (max-width: 767px) {
+			display: none;
+		}
+		&.ended {
+			.section-hero__video {
+				display: none;
+			}
+			.section-hero__freeze {
+				display: block;
+			}
+		}
+	}
+	
+}
