@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body class="">
+	<video src="" style="display: none"></video>
 	<header class="header">
 		<div class="header__content">
 			<button class="header__menu-btn" aria-label="Меню"></button>
@@ -49,8 +50,8 @@
 			</svg>
 			<div class="header__menu">
 				<div class="header-switch">
-					<div class="header-switch__item active">IPHONE</div>
-					<div class="header-switch__item">Android</div>
+					<div class="header-switch__item" data-os="ios">IPHONE</div>
+					<div class="header-switch__item" data-os="android">Android</div>
 				</div>
 				<div class="header-lang">
 					<img class="header-lang__flag" src="img/us.png" alt="">
@@ -73,11 +74,12 @@
 			</ul>
 		</div>
 		<figure class="section-hero__img"></figure>
-		<div class="section-hero__video-container">
-			<video src="" class="section-hero__video"></video>
-			<figure class="section-hero__freeze"></figure>
+
+
+		<!-- First (1.mp4)-->
+		<figure class="section-hero__video-container">
 			<div class="section-hero__overlay"></div>
-		</div>
+		</figure>
 		<div class="section-hero__store-link">
 			<a href="#" class="button store-bage store-bage_app-store"></a>
 			<a href="#" class="button store-bage store-bage_google-play"></a>
@@ -95,15 +97,6 @@
 				<div>криптовалют</div>
 			</div>
 		</div>
-		<div class="advantages__item advantages__item_soon">
-			<div class="advantages__icon">
-				<svg width="46px" height="33px"><use xlink:href="img/sprite.svg#advantages-icon-2"></use></svg>
-			</div>
-			<div class="advantages__text">
-				<span class="advantages__text-large orange">20+</span>
-				брокеров по <br>всему миру
-			</div>
-		</div>
 		<div class="advantages__item">
 			<div class="advantages__icon">
 				<svg width="35px" height="32px"><use xlink:href="img/sprite.svg#advantages-icon-3"></use></svg>
@@ -111,6 +104,15 @@
 			<div class="advantages__text">
 				<span class="orange">realtime</span>
 				котировки <br>и уведомления
+			</div>
+		</div>
+		<div class="advantages__item advantages__item_soon">
+			<div class="advantages__icon">
+				<svg width="46px" height="33px"><use xlink:href="img/sprite.svg#advantages-icon-2"></use></svg>
+			</div>
+			<div class="advantages__text">
+				<span class="advantages__text-large orange">20+</span>
+				брокеров по <br>всему миру
 			</div>
 		</div>
 		<div class="advantages__item advantages__item_soon">
@@ -131,10 +133,9 @@
 			<li class="action-list__item">Открывайте счет</li>
 			<li class="action-list__item">Торгуйте и зарабатывайте</li>
 		</ol>
-		<div class="three-phones-container">
-			<video src="" class="three-phones-container__video"></video>
-			<figure class="freeze three-phones-container__freeze"></figure>
-		</div>
+
+		<!-- Second (2.mp4)-->
+		<figure class="three-phones-container"></figure>
 		<figure class="three-phones"></figure>
 		<div class="row row_center">
 			<a href="#" class="button button_long">Регистрация</a>
@@ -147,20 +148,16 @@
 			<li class="adv-list__item">Удобные<br>  графики</li>
 			<li class="adv-list__item">Stoploss<br> и takeprofit</li>
 		</ul>
-		<div class="three-phones-at-an-angle-video">
-			<video src="" class="three-phones-at-an-angle-video__video"></video>
-			<figure class="three-phones-at-an-angle-video__freeze"></figure>
-		</div>
+
+		<!-- (4.mp4)-->
+		<figure class="three-phones-at-an-angle-video"></figure>
 		<figure class="three-phones-at-an-angle"></figure>
 	</div>
 	<div class="section mp-2">
 		<h1><span class="orange">Изучайте детали</span> под любым углом</h1>
 
-		
-		<div class="horizontal-phone-video">
-			<video src="" class="horizontal-phone-video__video"></video>
-			<figure class="horizontal-phone-video__freeze"></figure>
-		</div>
+		<!-- last (6.mp4)-->
+		<figure class="horizontal-phone-video"></figure>
 		<figure class="horizontal-phone"></figure>
 	</div>
 	<div class="section section_last phone-in-hand-container">
@@ -229,6 +226,7 @@
 				</svg>
 			</div>
 		</div>
+		<a href="#" class="view-all-list-link gray-link">Смотреть полный список</a>
 		<h2 class="title-soon">Акции</h2>
 		<div class="container bage-container carousel">
 			<div class="bage">
