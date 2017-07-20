@@ -17,16 +17,17 @@
 	}
 
 	&.media-end {
+		.mediaobject-element {
+			opacity: 0 !important;
+		}
+	}
+	&.media-last-frame {
 		.ios & {
 			.bg("../video_ios/", "@{num}-end", "jpg");
 		}
 
 		.android & {
 			.bg("../video_android/", "@{num}-end", "jpg");
-		}
-
-		.mediaobject-element {
-			opacity: 0 !important;
 		}
 	}
 }

@@ -105,6 +105,8 @@ Element.prototype.viewChecker = function (options) {
 			video.style.opacity = '1';
 			video.style.visibility = 'visible';
 
+			el.classList.add('media-last-frame');
+
 			video.addEventListener('ended', end);
 
 			if (promise instanceof Promise) {
@@ -134,12 +136,16 @@ Element.prototype.viewChecker = function (options) {
 		};
 
 	} else {
-		console.log('Вопсроизведение данного формата недоступно для вашего браузера');
+		console.log('Воспроизведение данного формата недоступно для вашего браузера');
 		end();
 	}
 
 	function end () {
 		ended = true;
+
+		if (!el.classList.contains('media-last-frame'))
+			el.classList.add('media-last-frame');
+
 		el.classList.add('media-end');
 	}
 	function isCanPlay () {
