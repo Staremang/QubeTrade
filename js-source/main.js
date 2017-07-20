@@ -1,6 +1,7 @@
 // var url = {
 // 	'ios': ['video/ios/1.mp4', 'video/ios/2.mp4', 'video/ios/3.mp4', 'video/ios/4.mp4', 'video/ios/5.mp4', 'video/ios/6.mp4',]
 // }
+
 function ready(fn) {
 	if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
 		fn();
@@ -144,6 +145,8 @@ Element.prototype.viewChecker = function (options) {
 
 
 ready(function () {
+	svg4everybody();
+
 	if (navigator.platform.indexOf('Mac') !== -1 || navigator.platform.indexOf('iPhone') !== -1) {
 		document.body.classList.add('ios');
 		document.querySelector('.header-switch__item[data-os="ios"]').classList.add('active');
