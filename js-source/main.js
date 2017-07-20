@@ -41,7 +41,7 @@ Element.prototype.viewChecker = function (options) {
 
 	var trigger = false,
 		isLoad = false,
-		played = false,
+		ended = false,
 		el = this;
 		// video = el.children[0];
 
@@ -62,13 +62,15 @@ Element.prototype.viewChecker = function (options) {
 
 
 
-		video.addEventListener('canplaythrough', videoLoaded)
-		video.addEventListener('error', function (error) {
+		video.addEventListener('error', (error) => {
 			console.log(options, 'Ошибка воспроизведения', error);
 			end();
 		});
+		video.addEventListener('canplaythrough', videoLoaded);
+
 		window.addEventListener('scroll', visibleTrigger);
 		window.addEventListener('resize', visibleTrigger);
+		
 		visibleTrigger();
 
 		function videoLoaded () {
@@ -77,19 +79,19 @@ Element.prototype.viewChecker = function (options) {
 		}
 
 		function visibleTrigger () {
-			if (isVisible() && !played) {
+			if (isVisible() && !trigger) {
+
+				window.removeEventListener('scroll', visibleTrigger);
+				window.removeEventListener('resize', visibleTrigger);
 
 				if (isLoad) {
-					played = true;
+					trigger = true;
 					start();
 				} else {
 					setTimeout(function () {
 						if (!isLoad) {
 							console.log(options, 'Видео не загрузилось');
-							video.removeEventListener('canplaythrough', videoLoaded)
-							// video.removeEventListener('error', end);
-							window.removeEventListener('scroll', visibleTrigger);
-							window.removeEventListener('resize', visibleTrigger);
+							video.removeEventListener('canplaythrough', videoLoaded);
 							end();
 						}
 					}, 8000)
@@ -103,9 +105,6 @@ Element.prototype.viewChecker = function (options) {
 			video.style.opacity = '1';
 			video.style.visibility = 'visible';
 
-
-			window.removeEventListener('scroll', visibleTrigger);
-			window.removeEventListener('resize', visibleTrigger);
 			video.addEventListener('ended', end);
 
 			if (promise instanceof Promise) {
@@ -123,8 +122,14 @@ Element.prototype.viewChecker = function (options) {
 					);
 
 			} else {
-				console.error('autoplay unknown');
-				end();
+				setTimeout(() => {
+					if (!ended) {
+						console.error('Не удалось воспроизвести видео');
+
+						video.removeEventListener('canplaythrough', videoLoaded);
+						end();
+					}
+				}, 8000)
 			}
 		};
 
@@ -134,6 +139,7 @@ Element.prototype.viewChecker = function (options) {
 	}
 
 	function end () {
+		ended = true;
 		el.classList.add('media-end');
 	}
 	function isCanPlay () {
