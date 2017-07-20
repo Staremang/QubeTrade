@@ -63,7 +63,10 @@ Element.prototype.viewChecker = function (options) {
 
 
 		video.addEventListener('canplaythrough', videoLoaded)
-		video.addEventListener('error', end);
+		video.addEventListener('error', function (error) {
+			console.log(options, 'Ошибка воспроизведения', error);
+			end();
+		});
 		window.addEventListener('scroll', visibleTrigger);
 		window.addEventListener('resize', visibleTrigger);
 		visibleTrigger();
@@ -82,8 +85,9 @@ Element.prototype.viewChecker = function (options) {
 				} else {
 					setTimeout(function () {
 						if (!isLoad) {
+							console.log(options, 'Видео не загрузилось');
 							video.removeEventListener('canplaythrough', videoLoaded)
-							video.removeEventListener('error', end);
+							// video.removeEventListener('error', end);
 							window.removeEventListener('scroll', visibleTrigger);
 							window.removeEventListener('resize', visibleTrigger);
 							end();
@@ -104,21 +108,28 @@ Element.prototype.viewChecker = function (options) {
 			window.removeEventListener('resize', visibleTrigger);
 			video.addEventListener('ended', end);
 
-			// if (promise instanceof Promise) {
-				promise.then(function() {
-					console.log(options, 'autoplay');
-				}).catch(function(error) {
-					console.error(options, error.message);
-					end();
-				});
+			if (promise instanceof Promise) {
+				promise
+					.then(
+						() => {
+							console.log(options, 'autoplay');
+						}
+					)
+					.catch(
+						(error) => {
+							console.error(options, error.message);
+							end();
+						}
+					);
 
-			// } else {
-			// 	console.error('autoplay unknown');
-			// 	end();
-			// }
+			} else {
+				console.error('autoplay unknown');
+				end();
+			}
 		};
 
 	} else {
+		console.log('Вопсроизведение данного формата недоступно для вашего браузера');
 		end();
 	}
 
@@ -130,14 +141,6 @@ Element.prototype.viewChecker = function (options) {
 	}
 	function isVisible () {
 		return el.getBoundingClientRect().top <= document.documentElement.clientHeight;
-	};
-
-	function attachEvent(element, event, callbackFunction) {
-	    if (element.addEventListener) {
-	        element.addEventListener(event, callbackFunction, false);
-	    } else if (element.attachEvent) {
-	        element.attachEvent('on' + event, callbackFunction);
-	    }
 	};
 
 	return this;
