@@ -98,22 +98,23 @@ Element.prototype.viewChecker = function (options) {
 			video.style.opacity = '1';
 			video.style.visibility = 'visible';
 
-			if (promise instanceof Promise) {
+
+			window.removeEventListener('scroll', visibleTrigger);
+			window.removeEventListener('resize', visibleTrigger);
+			video.addEventListener('ended', end);
+
+			// if (promise instanceof Promise) {
 				promise.then(function() {
-					console.log(options, 'autoplay')
+					console.log(options, 'autoplay');
 				}).catch(function(error) {
 					console.error(options, error.message);
 					end();
 				});
 
-			} else {
-				console.error('autoplay unknown');
-				end();
-			}
-
-			window.removeEventListener('scroll', visibleTrigger);
-			window.removeEventListener('resize', visibleTrigger);
-			video.addEventListener('ended', end)
+			// } else {
+			// 	console.error('autoplay unknown');
+			// 	end();
+			// }
 		};
 
 	} else {
