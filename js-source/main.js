@@ -42,6 +42,7 @@ Element.prototype.viewChecker = function (options) {
 	var trigger = false,
 		isLoad = false,
 		ended = false,
+		timeoutId,
 		el = this;
 		// video = el.children[0];
 
@@ -88,7 +89,7 @@ Element.prototype.viewChecker = function (options) {
 					trigger = true;
 					start();
 				} else {
-					setTimeout(function () {
+					timeoutId = setTimeout(() => {
 						if (!isLoad) {
 							console.log(options, 'Видео не загрузилось');
 							video.removeEventListener('canplaythrough', videoLoaded);
@@ -102,11 +103,15 @@ Element.prototype.viewChecker = function (options) {
 		function start () {
 			const promise = video.play();
 
+			clearTimeout(timeoutId);
+
 			video.style.opacity = '1';
 			video.style.visibility = 'visible';
 
-			el.classList.add('media-last-frame');
 
+			setTimeout(() => {
+				el.classList.add('media-last-frame');
+			}, 500);
 			video.addEventListener('ended', end);
 
 			if (promise instanceof Promise) {
