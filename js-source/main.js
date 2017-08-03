@@ -27,59 +27,23 @@ function fadeIn(el) {
 
 Element.prototype.viewChecker = function (options) {
 	
-	// if (this.length !== 0) {
-	// 	for (let i = 0; i < this.length; i++) {
-	// 		setPupup(this[i]);
-	// 	}
-	// }
-		// function set (el) {
-	// 	if (typeof el !== 'undefined') {
-	// 			attachEvent(window, el, );
-	// 		};
-	// 	};
-	// };
-
 	var trigger = false,
 		isLoad = false,
 		ended = false,
-		timeoutId,
 		el = this;
 		// video = el.children[0];
 
+	reset(el);
+	
 	if (isCanPlay()) {
-		var video = document.createElement('video');
-
-		if (navigator.platform.indexOf('Mac') !== -1 || navigator.platform.indexOf('iPhone') !== -1) {
-			video.setAttribute('src', 'video_ios/' + options);
-		} else {
-			video.setAttribute('src', 'video_android/' + options);
-		}
-
-		// video.setAttribute('preload', 'none');
-
-		video.classList.add('mediaobject-element');
-
-		el.insertBefore(video, el.children[0]);
-
-
-
-		video.addEventListener('error', (error) => {
-			console.log(options, 'Ошибка воспроизведения', error);
-			end();
-		});
-		video.addEventListener('canplaythrough', videoLoaded);
-
-		window.addEventListener('scroll', visibleTrigger);
-		window.addEventListener('resize', visibleTrigger);
+		var timeoutId;
 		
-		visibleTrigger();
-
-		function videoLoaded () {
+		var videoLoaded = function () {
 			isLoad = true;
 			visibleTrigger();
 		}
 
-		function visibleTrigger () {
+		var visibleTrigger = function () {
 			if (isVisible() && !trigger) {
 
 				window.removeEventListener('scroll', visibleTrigger);
@@ -91,7 +55,7 @@ Element.prototype.viewChecker = function (options) {
 				} else {
 					timeoutId = setTimeout(() => {
 						if (!isLoad) {
-							console.log(options, 'Видео не загрузилось');
+							log(false, 'Видео не загрузилось в указанный период');
 							video.removeEventListener('canplaythrough', videoLoaded);
 							end();
 						}
@@ -100,7 +64,7 @@ Element.prototype.viewChecker = function (options) {
 			}
 		};
 
-		function start () {
+		var start = function () {
 			const promise = video.play();
 
 			clearTimeout(timeoutId);
@@ -112,18 +76,19 @@ Element.prototype.viewChecker = function (options) {
 			setTimeout(() => {
 				el.classList.add('media-last-frame');
 			}, 500);
+			
 			video.addEventListener('ended', end);
 
 			if (promise instanceof Promise) {
 				promise
 					.then(
 						() => {
-							console.log(options, 'autoplay');
+							log(true);
 						}
 					)
 					.catch(
 						(error) => {
-							console.error(options, error.message);
+							log(false, error.message);
 							end();
 						}
 					);
@@ -131,18 +96,72 @@ Element.prototype.viewChecker = function (options) {
 			} else {
 				setTimeout(() => {
 					if (!ended) {
-						console.error('Не удалось воспроизвести видео');
+						log(false, 'Видео слишком долго грузилось');
 
 						video.removeEventListener('canplaythrough', videoLoaded);
 						end();
 					}
-				}, 8000)
+				}, 10000)
 			}
 		};
+		
+		
+		
+		var video = createVideo(el);
+
+		video.addEventListener('canplaythrough', videoLoaded);
+
+		window.addEventListener('scroll', visibleTrigger);
+		window.addEventListener('resize', visibleTrigger);
+		
+		visibleTrigger();
+
 
 	} else {
-		console.log('Воспроизведение данного формата недоступно для вашего браузера');
+		log(false, 'Воспроизведение данного формата недоступно для вашего браузера');
 		end();
+	}
+	
+	function createVideo (parent) {
+		var video = document.createElement('video');
+
+		if (options.os === 'ios') {
+			video.setAttribute('src', 'video_ios/' + options.name);
+		} else {
+			video.setAttribute('src', 'video_android/' + options.name);
+		}
+
+		// video.setAttribute('preload', 'none');
+
+		video.classList.add('mediaobject-element');
+
+		parent.insertBefore(video, parent.children[0]);
+		
+		video.addEventListener('error', (error) => {
+			log(false, error);
+			end();
+		});
+		
+		return video;
+	}
+	
+	function log (okay, msg) {
+		if (okay)
+			console.log(options.name + ' - Успешно')
+		else {
+			if (typeof msg !== 'undefined')
+				console.error(options.name, msg)
+			else
+				console.error(options.name, ' - Unknown error')
+		}
+	}
+	
+	function reset (element) {
+		element.innerHTML = '';
+		if (element.classList.contains('media-last-frame'))
+			element.classList.remove('media-last-frame');
+		if (element.classList.contains('media-end'))
+			element.classList.remove('media-end');
 	}
 
 	function end () {
@@ -162,41 +181,52 @@ Element.prototype.viewChecker = function (options) {
 
 	return this;
 }
-
+function setVideo (os) {
+	document.querySelector('.section-hero__video-container').viewChecker({
+		name: '1.mp4',
+		os: os
+	});
+	document.querySelector('.three-phones-container').viewChecker({
+		name: '2.mp4',
+		os: os
+	});
+	document.querySelector('.three-phones-at-an-angle-video').viewChecker({
+		name: '4.mp4',
+		os: os
+	});
+	document.querySelector('.horizontal-phone-video').viewChecker({
+		name: '6.mp4',
+		os: os
+	});
+}
 
 ready(function () {
 	svg4everybody();
-
+	console.log('v1 - 04.08');
 	if (navigator.platform.indexOf('Mac') !== -1 || navigator.platform.indexOf('iPhone') !== -1) {
 		document.body.classList.add('ios');
 		document.querySelector('.header-switch__item[data-os="ios"]').classList.add('active');
+		setVideo('ios');
 	} else {
 		document.body.classList.add('android');
 		document.querySelector('.header-switch__item[data-os="android"]').classList.add('active');
+		setVideo('android');
 	}
-	document.querySelector('.section-hero__video-container').viewChecker('1.mp4');
-	document.querySelector('.three-phones-container').viewChecker('2.mp4');
-		// document.querySelector('.account-state-screenshot-video').viewChecker('3.mp4');
-	document.querySelector('.three-phones-at-an-angle-video').viewChecker('4.mp4');
-		// document.querySelector('.screenshot-of-the-current-price-video').viewChecker('5.mp4');
-	document.querySelector('.horizontal-phone-video').viewChecker('6.mp4');
-
-//	fadeIn(document.querySelector('.section-hero__video'));
-	// document.querySelector('.section-hero__video').play();
-//	document.querySelector('.section-hero__video').style.opacity = 0;
-	// document.querySelector('.section-hero__video').classList.add('animated');
-	// document.querySelector('.section-hero__video').classList.add('fadeIn');
 });
 $(document).ready(function() {
-	$('.header-switch__item').click(function () {
+	$('.header-switch').click(function () {
 		$('.header-switch__item').removeClass('active');
-		$(this).addClass('active');
-		if ($(this).attr('data-os') === 'ios') {
-			$('body').removeClass('android');
-			$('body').addClass('ios');
+		
+		if (document.body.classList.contains('android')) {
+			document.body.classList.remove('android');
+			document.body.classList.add('ios');
+			document.querySelector('.header-switch__item[data-os="ios"]').classList.add('active');
+			setVideo('ios');
 		} else {
-			$('body').removeClass('ios');
-			$('body').addClass('android');
+			document.body.classList.remove('ios');
+			document.body.classList.add('android');
+			document.querySelector('.header-switch__item[data-os="android"]').classList.add('active');
+			setVideo('android');
 		}
 	})
 	if (document.documentElement.clientWidth <= 768) {
