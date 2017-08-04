@@ -32,7 +32,8 @@ Element.prototype.viewChecker = function (options) {
 	reset(el);
 	
 	if (isCanPlay()) {
-		var timeoutId;
+		var timeoutId,
+			video;
 		
 		var videoLoaded = function () {
 			isLoad = true;
@@ -100,18 +101,15 @@ Element.prototype.viewChecker = function (options) {
 				}, 10000)
 			}
 		};
-		
-		
-		
-		var video = createVideo(el);
+
+		video = createVideo(el);
 
 		video.addEventListener('canplaythrough', videoLoaded);
 
 		window.addEventListener('scroll', visibleTrigger);
 		window.addEventListener('resize', visibleTrigger);
-		
-		visibleTrigger();
 
+		visibleTrigger();
 
 	} else {
 		log(false, 'Воспроизведение данного формата недоступно для вашего браузера');
@@ -205,7 +203,7 @@ function setVideo (os) {
 
 ready(function () {
 	svg4everybody();
-	console.log('v1.12 - 05.08');
+	console.log('v1.13 - 05.08');
 	if (navigator.platform.indexOf('Mac') !== -1 || navigator.platform.indexOf('iPhone') !== -1) {
 		document.body.classList.add('ios');
 		document.querySelector('.header-switch__item[data-os="ios"]').classList.add('active');
