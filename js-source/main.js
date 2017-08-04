@@ -1,7 +1,3 @@
-// var url = {
-// 	'ios': ['video/ios/1.mp4', 'video/ios/2.mp4', 'video/ios/3.mp4', 'video/ios/4.mp4', 'video/ios/5.mp4', 'video/ios/6.mp4',]
-// }
-
 function ready(fn) {
 	if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
 		fn();
@@ -126,9 +122,15 @@ Element.prototype.viewChecker = function (options) {
 		var video = document.createElement('video');
 
 		if (options.os === 'ios') {
-			video.setAttribute('src', 'video_ios/' + options.name);
+			// video.setAttribute('src', 'video_ios/' + options.name);
+
+			video.innerHTML += '<source src="video_ios/' + options.name + '.webm" type="video/webm">';
+			video.innerHTML += '<source src="video_ios/' + options.name + '.mp4" type="video/mp4">';
 		} else {
-			video.setAttribute('src', 'video_android/' + options.name);
+			// video.setAttribute('src', 'video_android/' + options.name);
+
+			video.innerHTML += '<source src="video_android/' + options.name + '.webm" type="video/webm">';
+			video.innerHTML += '<source src="video_android/' + options.name + '.mp4" type="video/mp4">';
 		}
 
 		// video.setAttribute('preload', 'none');
@@ -137,6 +139,7 @@ Element.prototype.viewChecker = function (options) {
 
 		parent.insertBefore(video, parent.children[0]);
 		
+		video.load();
 		video.addEventListener('error', (error) => {
 			log(false, error);
 			end();
@@ -173,7 +176,7 @@ Element.prototype.viewChecker = function (options) {
 		el.classList.add('media-end');
 	}
 	function isCanPlay () {
-		return document.getElementsByTagName('video')[0].canPlayType("video/mp4") !== ''
+		return document.getElementsByTagName('video')[0].canPlayType("video/mp4") !== '' || document.getElementsByTagName('video')[0].canPlayType("video/mp4") !== '';
 	}
 	function isVisible () {
 		return el.getBoundingClientRect().top <= document.documentElement.clientHeight;
@@ -183,26 +186,26 @@ Element.prototype.viewChecker = function (options) {
 }
 function setVideo (os) {
 	document.querySelector('.section-hero__video-container').viewChecker({
-		name: '1.mp4',
+		name: '1',
 		os: os
 	});
 	document.querySelector('.three-phones-container').viewChecker({
-		name: '2.mp4',
+		name: '2',
 		os: os
 	});
 	document.querySelector('.three-phones-at-an-angle-video').viewChecker({
-		name: '4.mp4',
+		name: '4',
 		os: os
 	});
 	document.querySelector('.horizontal-phone-video').viewChecker({
-		name: '6.mp4',
+		name: '6',
 		os: os
 	});
 }
 
 ready(function () {
 	svg4everybody();
-	console.log('v1 - 04.08');
+	console.log('v1.1 - 05.08');
 	if (navigator.platform.indexOf('Mac') !== -1 || navigator.platform.indexOf('iPhone') !== -1) {
 		document.body.classList.add('ios');
 		document.querySelector('.header-switch__item[data-os="ios"]').classList.add('active');
