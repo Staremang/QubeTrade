@@ -34,7 +34,7 @@ Element.prototype.viewChecker = function (options) {
 	if (isCanPlay()) {
 		var timeoutId,
 			video;
-		
+
 		var videoLoaded = function () {
 			isLoad = true;
 			visibleTrigger();
@@ -42,7 +42,6 @@ Element.prototype.viewChecker = function (options) {
 
 		var visibleTrigger = function () {
 			if (isVisible() && !trigger) {
-
 				window.removeEventListener('scroll', visibleTrigger);
 				window.removeEventListener('resize', visibleTrigger);
 
@@ -71,7 +70,8 @@ Element.prototype.viewChecker = function (options) {
 
 
 			setTimeout(() => {
-				el.classList.add('media-last-frame');
+				if (!el.classList.contains('media-last-frame'))
+					el.classList.add('media-last-frame');
 			}, 500);
 			
 			video.addEventListener('ended', end);
@@ -106,8 +106,26 @@ Element.prototype.viewChecker = function (options) {
 
 		video.addEventListener('canplaythrough', videoLoaded);
 
+
 		window.addEventListener('scroll', visibleTrigger);
 		window.addEventListener('resize', visibleTrigger);
+
+		window.addEventListener('unload', del);
+		document.querySelector('.header-switch').addEventListener('click', del);
+
+		function del () {
+			console.log('gsg');
+			clearTimeout(timeoutId);
+			video.removeEventListener('canplaythrough', videoLoaded);
+			window.removeEventListener('scroll', visibleTrigger);
+			window.removeEventListener('resize', visibleTrigger);
+			window.removeEventListener('unload', del);
+			document.querySelector('.header-switch').removeEventListener('click', del);
+
+			videoLoaded = null;
+			visibleTrigger = null;
+			start = null;
+		}
 
 		visibleTrigger();
 
@@ -203,7 +221,7 @@ function setVideo (os) {
 
 ready(function () {
 	svg4everybody();
-	console.log('v1.14 - 07.08');
+	console.log('v1.15 - 08.08');
 	if (navigator.platform.indexOf('Mac') !== -1 || navigator.platform.indexOf('iPhone') !== -1) {
 		document.body.classList.add('ios');
 		document.querySelector('.header-switch__item[data-os="ios"]').classList.add('active');
