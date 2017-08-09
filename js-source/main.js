@@ -219,7 +219,7 @@ function setVideo (os) {
 
 ready(function () {
 	svg4everybody();
-	console.log('v1.15 - 08.08');
+	console.log('v1.16 - 09.08');
 	if (navigator.platform.indexOf('Mac') !== -1 || navigator.platform.indexOf('iPhone') !== -1) {
 		document.body.classList.add('ios');
 		document.querySelector('.header-switch__item[data-os="ios"]').classList.add('active');
