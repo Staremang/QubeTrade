@@ -140,12 +140,10 @@ Element.prototype.viewChecker = function (options) {
 		if (options.os === 'ios') {
 			// video.setAttribute('src', 'video_ios/' + options.name);
 
-			video.innerHTML += '<source src="video_ios/' + options.name + '.webm" type="video/webm">';
 			video.innerHTML += '<source src="video_ios/' + options.name + '.mp4" type="video/mp4">';
 		} else {
 			// video.setAttribute('src', 'video_android/' + options.name);
 
-			video.innerHTML += '<source src="video_android/' + options.name + '.webm" type="video/webm">';
 			video.innerHTML += '<source src="video_android/' + options.name + '.mp4" type="video/mp4">';
 		}
 
