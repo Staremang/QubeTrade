@@ -137,14 +137,20 @@ Element.prototype.viewChecker = function (options) {
 	function createVideo (parent) {
 		var video = document.createElement('video');
 
-		if (options.os === 'ios') {
-			// video.setAttribute('src', 'video_ios/' + options.name);
-
-			video.innerHTML += '<source src="video_ios/' + options.name + '.mp4" type="video/mp4">';
+		if (navigator.userAgent.indexOf('OPR') !== -1) {
+			if (options.os === 'ios') {
+				video.setAttribute('src', 'video_ios/' + options.name + '.webm');
+			} else {
+				video.setAttribute('src', 'video_android/' + options.name + '.webm');
+			}
+			video.setAttribute('type', 'video/webm');
 		} else {
-			// video.setAttribute('src', 'video_android/' + options.name);
-
-			video.innerHTML += '<source src="video_android/' + options.name + '.mp4" type="video/mp4">';
+			if (options.os === 'ios') {
+				video.setAttribute('src', 'video_ios/' + options.name + '.mp4');
+			} else {
+				video.setAttribute('src', 'video_android/' + options.name + '.mp4');
+			}
+			video.setAttribute('type', 'video/mp4');
 		}
 
 		// video.setAttribute('preload', 'none');
@@ -219,17 +225,23 @@ function setVideo (os) {
 
 ready(function () {
 	svg4everybody();
-	console.log('v1.16 - 09.08');
+	console.log('v1.2 - 09.08');
 	if (navigator.platform.indexOf('Mac') !== -1 || navigator.platform.indexOf('iPhone') !== -1) {
 		document.body.classList.add('ios');
 		document.querySelector('.header-switch__item[data-os="ios"]').classList.add('active');
-		setVideo('ios');
 	} else {
 		document.body.classList.add('android');
 		document.querySelector('.header-switch__item[data-os="android"]').classList.add('active');
-		setVideo('android');
 	}
 });
+window.addEventListener('load', function () {
+	if (navigator.platform.indexOf('Mac') !== -1 || navigator.platform.indexOf('iPhone') !== -1) {
+		setVideo('ios');
+	} else {
+		setVideo('android');
+	}
+})
+
 $(document).ready(function() {
 	$('.header-switch').click(function () {
 		$('.header-switch__item').removeClass('active');
